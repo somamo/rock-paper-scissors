@@ -1,6 +1,8 @@
 body, html {
     background-color: #0f1626;
     height: 100%;
+    font-family: sans-serif;
+    color: #a4bbce;
 }
 
 .container {
@@ -9,7 +11,6 @@ body, html {
 
 .header {
     display: flex;
-    font-family: sans-serif;
     font-size: 1.0em;
     color: #a4bbce;
 }
@@ -18,21 +19,62 @@ body, html {
     padding: 10px 20px;
 }
 
-.content{
+a {
+    color: #a4bbce;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
+p {
+    font-size: 2em;
+    font-weight: lighter;
+    margin-bottom: 30px;
+    color: #376399;
+}
+
+.shapes {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    padding: 10px;
     align-items: center;
     height: 80%;
 }
 
-.img {
+.shape-buttons {
     display: flex;
+    flex-direction: row;
+}
+
+button {
+    display: flex;
+    flex-direction: column;
+    color: #0f1626;
+    font-size: 1.2em;
+    align-items: center;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    border: 2px solid #a4bbce;
+    background-color: #0e1525;
+    color: #a4bbce;
+}
+
+img {
+    margin-top: 20px;
 }
 
 @keyframes counter {
     0% {
-        color: #999;
+        color: #0f1626;
         font-size: 3em;
     }
     100% {
@@ -42,29 +84,60 @@ body, html {
 }
 
 .random {
-    -webkit-animation: counter 1s infinite; /* Safari 4+ */
-    -moz-animation:    counter 1s infinite; /* Fx 5+ */
-    -o-animation:      counter 1s infinite; /* Opera 12+ */
-    animation:         counter 1s infinite; /* IE 10+, Fx 29+ */
+    -webkit-animation: counter 0.7s infinite; /* Safari 4+ */
+    -moz-animation:    counter 0.7s infinite; /* Fx 5+ */
+    -o-animation:      counter 0.7s infinite; /* Opera 12+ */
+    animation:         counter 0.7s infinite; /* IE 10+, Fx 29+ */
 }
 
-.resultarea {
+.results {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     padding: 10px;
     align-items: center;
     height: 80%;
-    color: #fff;
-    font-size: 2.0em;
+    color: #a4bbce;
+    font-size: 1.2em;
+}
+
+.counter {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 80%;
+    font-family: serif;
 }
 
 .hidden {
     display: none;
 }
 
-.counterarea {
+.userresult {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
-    height: 80%;
+    font-size: 1.2em;
+}
+
+.computerresult {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.2em;
+}
+
+.centred-item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 80px;
+}
+
+.result {
+}
+
+button.playagain {
+    margin-top: 50px;
+    padding: 10px 30px;
+    font-size: 1em;
 }

@@ -1,5 +1,5 @@
 var timer;
-var images = document.querySelectorAll(".content img");
+var images = document.querySelectorAll(".shapes button");
 var rock = images[0];
 var paper = images[1];
 var scissors = images[2];
@@ -39,8 +39,8 @@ function compare(userChoice, computerChoice) {
     var computerresult = document.querySelector(".computerresult");
     var userresult = document.querySelector(".userresult")
 
-    computerresult.innerHTML = "Computer: " + computerChoice;
-    userresult.innerHTML = "You: " + userChoice;
+    computerresult.innerHTML = 'Computer <img src="img/' + computerChoice + '.png"></img>';
+    userresult.innerHTML = 'You <img src="img/' + userChoice + '.png"></img>';
 
     if (computerChoice === userChoice) {
         result.innerHTML = "The result is a tie!";
@@ -48,28 +48,28 @@ function compare(userChoice, computerChoice) {
 
     else if (computerChoice === "rock") {
         if (userChoice === "scissors") {
-            result.innerHTML = "rock wins";
+            result.innerHTML = "Rock wins!";
         }
         else {
-            result.innerHTML = "paper wins";
+            result.innerHTML = "Paper wins!";
         }
     }
 
     else if (computerChoice === "paper") {
         if (userChoice === "rock") {
-            result.innerHTML = "paper wins";
+            result.innerHTML = "Paper wins!";
         }
         else {
-            result.innerHTML = "scissors wins";
+            result.innerHTML = "Scissors wins!";
         }
     }
 
     else if (computerChoice === "scissors") {
         if (userChoice === "rock") {
-            result.innerHTML = "rock wins";
+            result.innerHTML = "Rock wins!";
         }
         else {
-            result.innerHTML = "scissors wins";
+            result.innerHTML = "Scissors wins!";
         }
     }
 
@@ -77,22 +77,22 @@ function compare(userChoice, computerChoice) {
 };
 
 function toggleArea() {
-    var content = document.querySelector(".content");
-    var counter = document.querySelector(".counterarea");
-    var result = document.querySelector(".resultarea");
+    var shapes = document.querySelector(".shapes");
+    var counter = document.querySelector(".counter");
+    var result = document.querySelector(".results");
 
     if (!result.className.includes("hidden")){
-        result.className = "resultarea hidden";
-        counter.className = "counterarea hidden";
-        content.className = "content";
+        result.className = "results hidden";
+        counter.className = "counter hidden";
+        shapes.className = "shapes";
     } else if (!counter.className.includes("hidden")){
-        content.className = "content hidden";
-        counter.className = "counterarea hidden";
-        result.className = "resultarea";
+        shapes.className = "shapes hidden";
+        counter.className = "counter hidden";
+        result.className = "results";
     } else {
-        content.className = "content hidden";
-        counter.className = "counterarea";
-        result.className = "resultarea hidden";
+        shapes.className = "shapes hidden";
+        counter.className = "counter";
+        result.className = "results hidden";
         randomCounter();
     };
 };
@@ -110,7 +110,7 @@ function randomCounter() {
     if (random.innerHTML === ""){
         random.innerHTML = "1";
         random.className = "random";
-        timer = setInterval(randomCounter, 1000);
+        timer = setInterval(randomCounter, 700);
     } else if (random.innerHTML === "1") {
         random.innerHTML = "2";
     } else if (random.innerHTML === "2"){
