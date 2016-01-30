@@ -55,7 +55,6 @@ body, html {
     align-items: center;
     height: 80%;
     color: #fff;
-    background-color: red;
     font-size: 2.0em;
 }
 
@@ -64,6 +63,8 @@ body, html {
 }
 
 .counterarea {
-    height: 100px;
-    background-color: green;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 80%;
 }
