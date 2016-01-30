@@ -1,0 +1,69 @@
+body, html {
+    background-color: #0f1626;
+    height: 100%;
+}
+
+.container {
+    height: 100%;
+}
+
+.header {
+    display: flex;
+    font-family: sans-serif;
+    font-size: 1.0em;
+    color: #a4bbce;
+}
+
+.header-items {
+    padding: 10px 20px;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    align-items: center;
+    height: 80%;
+}
+
+.img {
+    display: flex;
+}
+
+@keyframes counter {
+    0% {
+        color: #999;
+        font-size: 3em;
+    }
+    100% {
+        color: #fff;
+        font-size: 10em;
+    }
+}
+
+.random {
+    -webkit-animation: counter 1s infinite; /* Safari 4+ */
+    -moz-animation:    counter 1s infinite; /* Fx 5+ */
+    -o-animation:      counter 1s infinite; /* Opera 12+ */
+    animation:         counter 1s infinite; /* IE 10+, Fx 29+ */
+}
+
+.resultarea {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    align-items: center;
+    height: 80%;
+    color: #fff;
+    background-color: red;
+    font-size: 2.0em;
+}
+
+.hidden {
+    display: none;
+}
+
+.counterarea {
+    height: 100px;
+    background-color: green;
+}
