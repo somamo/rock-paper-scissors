@@ -5,6 +5,14 @@ var paper = images[1];
 var scissors = images[2];
 var userscore = 0;
 var computerscore = 0;
+var userscoreDisplay = document.querySelector(".user-score");
+var computerscoreDisplay = document.querySelector(".computer-score");
+var reset = document.querySelector(".reset");
+
+reset.addEventListener("click", resetScore, false);
+rock.addEventListener("click", comparerock, false);
+paper.addEventListener("click", comparepaper, false);
+scissors.addEventListener("click", comparescissors, false);
 
 function computerChoice() {
 
@@ -19,10 +27,6 @@ function computerChoice() {
     }
 };
 
-rock.addEventListener("click", comparerock, false);
-paper.addEventListener("click", comparepaper, false);
-scissors.addEventListener("click", comparescissors, false);
-
 function comparerock(ev) {
     compare("rock", computerChoice());
 };
@@ -36,7 +40,7 @@ function comparescissors(ev) {
 };
 
 function compare(userChoice, computerChoice) {
-
+    var resultreason = document.querySelector(".result-reason");
     var result = document.querySelector(".result");
     var computerresult = document.querySelector(".computerresult");
     var userresult = document.querySelector(".userresult");
@@ -45,38 +49,45 @@ function compare(userChoice, computerChoice) {
     userresult.innerHTML = 'You <img src="img/' + userChoice + '.png"></img>';
 
     if (computerChoice === userChoice) {
+        resultreason.innerHTML = "";
         result.innerHTML = "The result is a tie!";
     }
 
     else if (computerChoice === "rock") {
         if (userChoice === "scissors") {
-            result.innerHTML = "Rock wins!";
+            resultreason.innerHTML = "Rock smashes scissors.";
+            result.innerHTML = "Computer wins :-(";
             computerscore++;
         }
         else {
-            result.innerHTML = "Paper wins!";
+            resultreason.innerHTML = "Paper wraps rock."
+            result.innerHTML = "You win :-)";
             userscore++;
         }
     }
 
     else if (computerChoice === "paper") {
         if (userChoice === "rock") {
-            result.innerHTML = "Paper wins!";
+            resultreason.innerHTML = "Paper wraps rock."
+            result.innerHTML = "Computer wins :-(";
             computerscore++;
         }
         else {
-            result.innerHTML = "Scissors wins!";
+            resultreason.innerHTML = "Scissors cut paper."
+            result.innerHTML = "You win :-)";
             userscore++;
         }
     }
 
     else if (computerChoice === "scissors") {
         if (userChoice === "rock") {
-            result.innerHTML = "Rock wins!";
+            resultreason.innerHTML = "Rock smashes scissors."
+            result.innerHTML = "You win :-)";
             userscore++;
         }
         else {
-            result.innerHTML = "Scissors wins!";
+            resultreason.innerHTML = "Scissors cut paper."
+            result.innerHTML = "Computer wins :-(";
             computerscore++;
         }
     }
@@ -88,8 +99,6 @@ function toggleArea() {
     var shapes = document.querySelector(".shapes");
     var counter = document.querySelector(".counter");
     var result = document.querySelector(".results");
-    var userscoreDisplay = document.querySelector(".user-score");
-    var computerscoreDisplay = document.querySelector(".computer-score");
 
     if (!result.className.includes("hidden")){
         result.className = "results hidden";
@@ -133,3 +142,10 @@ function randomCounter() {
         toggleArea();
     }
 };
+
+function resetScore() {
+        userscore = 0;
+        computerscore = 0;
+        computerscoreDisplay.innerHTML = computerscore;
+        userscoreDisplay.innerHTML = userscore;
+}
