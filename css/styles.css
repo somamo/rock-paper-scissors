@@ -37,9 +37,9 @@ a:hover {
 
 h1 {
     font-size: 1.3em;
-    font-weight: normal;
+    font-weight: lighter;
     margin-bottom: 7px;
-    color: #484e5a;
+    opacity: 0.4;
 }
 
 .shapes {
@@ -61,23 +61,23 @@ button {
     color: #0f1626;
     font-size: 0.9em;
     align-items: center;
-    border: 2px solid transparent;
+    border: 1px solid transparent;
     border-radius: 8px;
-    padding: 5px;
-    margin: 10px;
+    padding: 7px;
+    margin: 13px;
     cursor: pointer;
 }
 
 button:hover {
-    border: 2px solid #a4bbce;
+    border: 1px solid #a4bbce;
     background-color: #0e1525;
     color: #a4bbce;
 }
 
 img {
-    margin-top: 5px;
+    margin-top: 10px;
     width: auto;
-    height: 80px;
+    height: 70px;
 }
 
 @keyframes counter {
@@ -125,7 +125,7 @@ img {
 }
 
 .winresult {
-    font-size: 3em;
+    font-size: 1.8em;
     color: green;
 }
 
@@ -133,11 +133,12 @@ img {
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 0 20px;
+    padding: 0 30px;
+    font-weight: lighter;
 }
 
 .result-reason {
-    padding-bottom: 10px;
+    padding-bottom: 15px;
 }
 
 button.playagain {
@@ -151,11 +152,14 @@ button.playagain {
       padding: 20px;
       margin: 20px;
       font-size: 1.2em;
+      border: 2px solid transparent;
+  }
+  button:hover {
+      border: 2px solid #a4bbce;
   }
   h1 {
       font-size: 2em;
       margin-bottom: 30px;
-      font-weight: lighter;
   }
   button.playagain {
       margin-top: 30px;

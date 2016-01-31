@@ -45,6 +45,7 @@ function compare(userChoice, computerChoice) {
     var computerresult = document.querySelector(".computerresult");
     var userresult = document.querySelector(".userresult");
 
+    result.className = "result";
     computerresult.innerHTML = 'Computer <img src="img/' + computerChoice + '.png"></img>';
     userresult.innerHTML = 'You <img src="img/' + userChoice + '.png"></img>';
 
@@ -56,12 +57,13 @@ function compare(userChoice, computerChoice) {
     else if (computerChoice === "rock") {
         if (userChoice === "scissors") {
             resultreason.innerHTML = "Rock smashes scissors.";
-            result.innerHTML = "Computer wins :-(";
+            result.innerHTML = "Computer wins!";
             computerscore++;
         }
         else {
             resultreason.innerHTML = "Paper wraps rock."
-            result.innerHTML = "You win :-)";
+            result.innerHTML = "YOU WIN :-)";
+            result.className = "result winresult";
             userscore++;
         }
     }
@@ -69,12 +71,13 @@ function compare(userChoice, computerChoice) {
     else if (computerChoice === "paper") {
         if (userChoice === "rock") {
             resultreason.innerHTML = "Paper wraps rock."
-            result.innerHTML = "Computer wins :-(";
+            result.innerHTML = "Computer wins!";
             computerscore++;
         }
         else {
             resultreason.innerHTML = "Scissors cut paper."
-            result.innerHTML = "You win :-)";
+            result.innerHTML = "YOU WIN :-)";
+            result.className = "result winresult";
             userscore++;
         }
     }
@@ -82,12 +85,13 @@ function compare(userChoice, computerChoice) {
     else if (computerChoice === "scissors") {
         if (userChoice === "rock") {
             resultreason.innerHTML = "Rock smashes scissors."
-            result.innerHTML = "You win :-)";
+            result.innerHTML = "YOU WIN :-)";
+            result.className = "result winresult";
             userscore++;
         }
         else {
             resultreason.innerHTML = "Scissors cut paper."
-            result.innerHTML = "Computer wins :-(";
+            result.innerHTML = "Computer wins!";
             computerscore++;
         }
     }
