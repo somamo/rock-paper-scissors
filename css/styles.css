@@ -17,7 +17,7 @@ body, html {
 
 .header-items {
     display: flex;
-    padding: 10px 20px;
+    padding: 10px 10px;
     flex-direction: row;
 }
 
@@ -135,6 +135,7 @@ img {
     flex-direction: column;
     padding: 0 30px;
     font-weight: lighter;
+    text-align: center;
 }
 
 .result-reason {
@@ -148,35 +149,38 @@ button.playagain {
 }
 
 @media (min-width: 700px) {
-  button {
+    .header-items {
+        padding: 10px 20px;
+    }
+    button {
       padding: 20px;
       margin: 20px;
       font-size: 1.2em;
       border: 2px solid transparent;
-  }
-  button:hover {
+    }
+    button:hover {
       border: 2px solid #a4bbce;
-  }
-  h1 {
+    }
+    h1 {
       font-size: 2em;
       margin-bottom: 30px;
-  }
-  button.playagain {
+    }
+    button.playagain {
       margin-top: 30px;
       padding: 10px 30px;
       font-size: 1em;
-  }
-  .centred-item {
+    }
+    .centred-item {
       padding: 0 80px;
-  }
-  img {
+    }
+    img {
       margin-top: 20px;
       width: auto;
       height: 100%;
-  }
-  .results {
+    }
+    .results {
       font-size: 1.2em;
-  }
+    }
 }
 
 .hidden {
