@@ -16,7 +16,13 @@ body, html {
 }
 
 .header-items {
+    display: flex;
     padding: 10px 20px;
+    flex-direction: row;
+}
+
+.user-score, .computer-score {
+    padding: 0 5px;
 }
 
 a {

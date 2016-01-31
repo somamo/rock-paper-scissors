@@ -3,6 +3,8 @@ var images = document.querySelectorAll(".shapes button");
 var rock = images[0];
 var paper = images[1];
 var scissors = images[2];
+var userscore = 0;
+var computerscore = 0;
 
 function computerChoice() {
 
@@ -37,7 +39,7 @@ function compare(userChoice, computerChoice) {
 
     var result = document.querySelector(".result");
     var computerresult = document.querySelector(".computerresult");
-    var userresult = document.querySelector(".userresult")
+    var userresult = document.querySelector(".userresult");
 
     computerresult.innerHTML = 'Computer <img src="img/' + computerChoice + '.png"></img>';
     userresult.innerHTML = 'You <img src="img/' + userChoice + '.png"></img>';
@@ -49,27 +51,33 @@ function compare(userChoice, computerChoice) {
     else if (computerChoice === "rock") {
         if (userChoice === "scissors") {
             result.innerHTML = "Rock wins!";
+            computerscore++;
         }
         else {
             result.innerHTML = "Paper wins!";
+            userscore++;
         }
     }
 
     else if (computerChoice === "paper") {
         if (userChoice === "rock") {
             result.innerHTML = "Paper wins!";
+            computerscore++;
         }
         else {
             result.innerHTML = "Scissors wins!";
+            userscore++;
         }
     }
 
     else if (computerChoice === "scissors") {
         if (userChoice === "rock") {
             result.innerHTML = "Rock wins!";
+            userscore++;
         }
         else {
             result.innerHTML = "Scissors wins!";
+            computerscore++;
         }
     }
 
@@ -80,6 +88,8 @@ function toggleArea() {
     var shapes = document.querySelector(".shapes");
     var counter = document.querySelector(".counter");
     var result = document.querySelector(".results");
+    var userscoreDisplay = document.querySelector(".user-score");
+    var computerscoreDisplay = document.querySelector(".computer-score");
 
     if (!result.className.includes("hidden")){
         result.className = "results hidden";
@@ -89,6 +99,8 @@ function toggleArea() {
         shapes.className = "shapes hidden";
         counter.className = "counter hidden";
         result.className = "results";
+        computerscoreDisplay.innerHTML = computerscore;
+        userscoreDisplay.innerHTML = userscore;
     } else {
         shapes.className = "shapes hidden";
         counter.className = "counter";
