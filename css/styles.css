@@ -1,6 +1,8 @@
 body, html {
     background-color: #0f1626;
     height: 100%;
+    font-family: sans-serif;
+    color: #a4bbce;
 }
 
 .container {
@@ -9,30 +11,78 @@ body, html {
 
 .header {
     display: flex;
-    font-family: sans-serif;
     font-size: 1.0em;
     color: #a4bbce;
 }
 
 .header-items {
-    padding: 10px 20px;
+    display: flex;
+    padding: 10px 10px;
+    flex-direction: row;
 }
 
-.content{
+.user-score, .computer-score {
+    padding: 0 8px;
+}
+
+a {
+    color: #a4bbce;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
+h1 {
+    font-size: 1.3em;
+    font-weight: lighter;
+    margin-bottom: 7px;
+    opacity: 0.4;
+}
+
+.shapes {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    padding: 10px;
     align-items: center;
     height: 80%;
 }
 
-.img {
+.shape-buttons {
     display: flex;
+    flex-direction: row;
+}
+
+button {
+    display: flex;
+    flex-direction: column;
+    color: #0f1626;
+    font-size: 0.9em;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 7px;
+    margin: 13px;
+    cursor: pointer;
+}
+
+button:hover {
+    border: 1px solid #a4bbce;
+    background-color: #0e1525;
+    color: #a4bbce;
+}
+
+img {
+    margin-top: 10px;
+    width: auto;
+    height: 70px;
 }
 
 @keyframes counter {
     0% {
-        color: #999;
+        color: #0f1626;
         font-size: 3em;
     }
     100% {
@@ -42,28 +92,97 @@ body, html {
 }
 
 .random {
-    -webkit-animation: counter 1s infinite; /* Safari 4+ */
-    -moz-animation:    counter 1s infinite; /* Fx 5+ */
-    -o-animation:      counter 1s infinite; /* Opera 12+ */
-    animation:         counter 1s infinite; /* IE 10+, Fx 29+ */
+    -webkit-animation: counter 0.7s infinite; /* Safari 4+ */
+    -moz-animation:    counter 0.7s infinite; /* Fx 5+ */
+    -o-animation:      counter 0.7s infinite; /* Opera 12+ */
+    animation:         counter 0.7s infinite; /* IE 10+, Fx 29+ */
 }
 
-.resultarea {
+.results {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     padding: 10px;
     align-items: center;
     height: 80%;
-    color: #fff;
-    background-color: red;
-    font-size: 2.0em;
+    color: #a4bbce;
+    font-size: 1em;
+}
+
+.counter {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 80%;
+    font-family: serif;
+}
+
+.userresult, .computerresult  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1em;
+}
+
+.winresult {
+    font-size: 1.8em;
+    color: green;
+}
+
+.centred-item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 30px;
+    font-weight: lighter;
+    text-align: center;
+}
+
+.result-reason {
+    padding-bottom: 15px;
+}
+
+button.playagain {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+}
+
+@media (min-width: 700px) {
+    .header-items {
+        padding: 10px 20px;
+    }
+    button {
+      padding: 20px;
+      margin: 20px;
+      font-size: 1.2em;
+      border: 2px solid transparent;
+    }
+    button:hover {
+      border: 2px solid #a4bbce;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 30px;
+    }
+    button.playagain {
+      margin-top: 30px;
+      padding: 10px 30px;
+      font-size: 1em;
+    }
+    .centred-item {
+      padding: 0 80px;
+    }
+    img {
+      margin-top: 20px;
+      width: auto;
+      height: 100%;
+    }
+    .results {
+      font-size: 1.2em;
+    }
 }
 
 .hidden {
     display: none;
-}
-
-.counterarea {
-    height: 100px;
-    background-color: green;
 }

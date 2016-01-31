@@ -3,30 +3,39 @@
     <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
     </head>
     <body>
         <div class="container">
             <div class="header">
-                <div class="header-items">How to play?</div>
-                <div class="header-items">Restart</div>
-                <div class="header-items">Score  0 : 0</div>
+                <a class="header-items" href="https://en.wikipedia.org/wiki/Rock-paper-scissors">How to play?</a>
+                <a class="header-items reset">Reset</a>
+                <div class="header-items">Score
+                    <div class="user-score">0</div> :
+                    <div class="computer-score">0</div>
+                </div>
             </div>
-            <div class="content">
-                <img src="img/rock.png" alt="rock" class="img">
-                <img src="img/paper.png" alt="paper" class="img">
-                <img src="img/scissors.png" alt="scissors" class="img">
+            <div class="shapes">
+                <h1>Make your choice</h1>
+                <div class="shape-buttons">
+                    <button>Rock<img src="img/rock.png" alt="rock"></button>
+                    <button>Paper<img src="img/paper.png" alt="paper"></button>
+                    <button>Scissors<img src="img/scissors.png" alt="scissors"></button>
+                </div>
             </div>
-            <div class="resultarea hidden">
+            <div class="results hidden">
                 <div class="userresult"></div>
+                <div class="centred-item">
+                    <div class="result-reason"></div>
+                    <div class="result"></div>
+                    <button class="playagain">Play again</button>
+                </div>
                 <div class="computerresult"></div>
-                <div class="result"></div>
-                <div class="playagain">Play again!</div>
             </div>
-            <div class="counterarea hidden">
+            <div class="counter hidden">
                 <div class="random hidden"></div>
             </div>
         </div>
-    <script src="/js/game.js"></script>
+    <script src="js/game.js"></script>
     </body>
 </html>
