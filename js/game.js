@@ -26,19 +26,6 @@ function computerChoice() {
     }
 };
 
-
-/*function comparerock(ev) {
-    compare("rock", computerChoice());
-};
-
-function comparepaper(ev) {
-    compare("paper", computerChoice());
-};
-
-function comparescissors(ev) {
-    compare("scissors", computerChoice());
-};*/
-
 function compare(userChoice, computerChoice) {
     var resultreason = document.querySelector(".result-reason");
     var result = document.querySelector(".result");
