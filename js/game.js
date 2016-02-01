@@ -10,12 +10,11 @@ var computerscoreDisplay = document.querySelector(".computer-score");
 var reset = document.querySelector(".reset");
 
 reset.addEventListener("click", resetScore, false);
-rock.addEventListener("click", comparerock, false);
-paper.addEventListener("click", comparepaper, false);
-scissors.addEventListener("click", comparescissors, false);
+rock.addEventListener("click", function() {compare("rock", computerChoice());}, false);
+paper.addEventListener("click", function() {compare("paper", computerChoice());}, false);
+scissors.addEventListener("click", function() {compare("scissors", computerChoice());}, false);
 
 function computerChoice() {
-
     var computerChoice = Math.random();
 
     if (computerChoice < 0.34) {
@@ -25,18 +24,6 @@ function computerChoice() {
     } else {
     	return "scissors";
     }
-};
-
-function comparerock(ev) {
-    compare("rock", computerChoice());
-};
-
-function comparepaper(ev) {
-    compare("paper", computerChoice());
-};
-
-function comparescissors(ev) {
-    compare("scissors", computerChoice());
 };
 
 function compare(userChoice, computerChoice) {
@@ -104,11 +91,11 @@ function toggleArea() {
     var counter = document.querySelector(".counter");
     var result = document.querySelector(".results");
 
-    if (!result.className.includes("hidden")){
+    if (result.className.indexOf("hidden") < 0){
         result.className = "results hidden";
         counter.className = "counter hidden";
         shapes.className = "shapes";
-    } else if (!counter.className.includes("hidden")){
+    } else if (counter.className.indexOf("hidden") < 0){
         shapes.className = "shapes hidden";
         counter.className = "counter hidden";
         result.className = "results";
